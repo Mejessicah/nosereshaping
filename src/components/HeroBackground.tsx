@@ -16,15 +16,15 @@ function AnimatedSphere() {
   });
 
   return (
-    <Sphere args={[1, 64, 64]} ref={meshRef} scale={1.5}>
+    <mesh ref={meshRef}>
+      <sphereGeometry args={[1, 64, 64]} />
       <MeshDistortMaterial
         color="#9b87f5"
-        attach="material"
         distort={0.4}
         speed={2}
         roughness={0.5}
       />
-    </Sphere>
+    </mesh>
   );
 }
 
