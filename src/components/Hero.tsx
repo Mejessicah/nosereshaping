@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import HeroBackground from "./HeroBackground";
 
 const Hero = () => {
   return (
@@ -12,9 +11,6 @@ const Hero = () => {
         }}
       />
       
-      {/* 3D Animation Background */}
-      <HeroBackground />
-
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center z-10">
         <motion.h1 
