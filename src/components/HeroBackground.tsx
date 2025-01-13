@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
-import { MeshDistortMaterial } from '@react-three/drei';
+import { MeshDistortMaterial, Sphere } from '@react-three/drei';
 
 function AnimatedSphere() {
   const meshRef = useRef<Mesh>(null);
@@ -15,8 +15,7 @@ function AnimatedSphere() {
   });
 
   return (
-    <mesh ref={meshRef} scale={1.5}>
-      <sphereGeometry args={[1, 64, 64]} />
+    <Sphere args={[1, 64, 64]} ref={meshRef} scale={1.5}>
       <MeshDistortMaterial
         color="#9b87f5"
         attach="material"
@@ -24,7 +23,7 @@ function AnimatedSphere() {
         speed={2}
         roughness={0.5}
       />
-    </mesh>
+    </Sphere>
   );
 }
 
