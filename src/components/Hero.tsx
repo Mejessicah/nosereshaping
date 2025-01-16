@@ -31,8 +31,16 @@ const Hero = () => {
         >
           <motion.h1 
             variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 }
+              hidden: { opacity: 0, x: 100 },
+              visible: { 
+                opacity: 1, 
+                x: 0,
+                transition: {
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 100
+                }
+              }
             }}
             className="text-4xl md:text-6xl font-bold text-secondary-foreground mb-6"
           >
@@ -41,8 +49,16 @@ const Hero = () => {
           
           <motion.p
             variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 }
+              hidden: { opacity: 0, x: 100 },
+              visible: { 
+                opacity: 1, 
+                x: 0,
+                transition: {
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 90
+                }
+              }
             }}
             className="text-lg md:text-xl text-gray-600 mb-8"
           >
@@ -51,8 +67,16 @@ const Hero = () => {
 
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 }
+              hidden: { opacity: 0, x: 100 },
+              visible: { 
+                opacity: 1, 
+                x: 0,
+                transition: {
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 80
+                }
+              }
             }}
             className="space-y-4"
           >
@@ -73,12 +97,14 @@ const Hero = () => {
               <motion.p
                 className="mt-4 text-sm text-gray-500"
                 animate={{
-                  y: [0, -5, 0]
+                  x: [-5, 5, -5],
+                  y: [0, -3, 0]
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 4,
                   repeat: Infinity,
-                  repeatType: "reverse"
+                  repeatType: "reverse",
+                  ease: "easeInOut"
                 }}
               >
                 Start your journey to a confident, refined look today!
