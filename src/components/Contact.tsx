@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,14 +23,27 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-secondary">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
           <p className="text-gray-600">
             Schedule your free consultation today
           </p>
-        </div>
+        </motion.div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <motion.form 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          onSubmit={handleSubmit} 
+          className="space-y-6"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -86,15 +100,19 @@ const Contact = () => {
             />
           </div>
 
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <button
               type="submit"
               className="inline-block px-8 py-3 text-lg font-semibold text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors"
             >
               Send Message
             </button>
-          </div>
-        </form>
+          </motion.div>
+        </motion.form>
       </div>
     </section>
   );
